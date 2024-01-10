@@ -1,5 +1,8 @@
-DURATION=15
-ITERATIONS=2
+# Note: This code only works on NSX-T version 3.x. I wont work for NSX-T 4.x as the output format changed 
+# Number of seconds between samples
+DURATION=10
+# Number of samples (at least 2 are required since the script does a diff)
+ITERATIONS=10
 STATS_FILE=stats_flows.txt
 
 lcores=`esxcli network ens lcore list | grep DvsPortset | awk '{print $1}'`
